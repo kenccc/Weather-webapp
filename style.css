@@ -1,0 +1,134 @@
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(135deg, #f0f4f8, #d9e7ff);
+  color: #333;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  animation: backgroundAnimation 10s ease infinite;
+}
+
+h1 {
+  color: #007bff;
+  margin-bottom: 20px;
+  font-size: 32px;
+  font-weight: 600;
+  text-align: center;
+  transition: color 0.3s ease;
+}
+
+h1:hover {
+  color: #0056b3;
+}
+
+.container {
+  background: linear-gradient(135deg, #ffffff, #f0f4f8);
+  border-radius: 12px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+  max-width: 420px;
+  padding: 30px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.container:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
+}
+
+.location-info, .weather-info {
+  margin-bottom: 30px;
+}
+
+.location-info h4, .weather-info h4 {
+  color: #007bff;
+  border-bottom: 2px solid #007bff;
+  padding-bottom: 8px;
+  margin-bottom: 12px;
+  font-size: 20px;
+}
+
+.location-info p, .weather-info p {
+  font-size: 16px;
+  color: #555;
+  margin: 8px 0;
+  position: relative;
+  transition: color 0.3s ease;
+}
+
+.location-info p:hover, .weather-info p:hover {
+  color: #007bff;
+}
+
+p::before {
+  content: '';
+  position: absolute;
+  left: -10px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 6px;
+  height: 6px;
+  background-color: #007bff;
+  border-radius: 50%;
+  transition: transform 0.3s ease;
+}
+
+p:hover::before {
+  transform: translateY(-50%) scale(1.5);
+}
+
+@keyframes backgroundAnimation {
+  0% {
+    background: linear-gradient(135deg, #f0f4f8, #d9e7ff);
+  }
+  50% {
+    background: linear-gradient(135deg, #d9e7ff, #f0f4f8);
+  }
+  100% {
+    background: linear-gradient(135deg, #f0f4f8, #d9e7ff);
+  }
+}
+
+
+.footer {
+  position: fixed;
+  bottom: 10px;
+  left: 10px;
+  font-size: 12px;
+  color: #555;
+  background: rgba(255, 255, 255, 0.7);
+  padding: 5px 10px;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  transition: background 0.3s ease;
+}
+
+.footer:hover {
+  background: rgba(255, 255, 255, 0.9);
+  color: #007bff;
+}
+
+
+@media (max-width: 480px) {
+  .container {
+    width: 95%;
+    padding: 20px;
+  }
+
+  h1 {
+    font-size: 28px;
+  }
+
+  .location-info p, .weather-info p {
+    font-size: 14px;
+  }
+
+  .footer {
+    font-size: 10px;
+    padding: 3px 7px;
+  }
+}
